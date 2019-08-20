@@ -1,1 +1,26 @@
+Elixir is a functional programming language .
+To install Elixir :
+Mac : brew install elixir 
+We can verify the installation using :
+elixir -v 
 
+Running elixir using command line :
+We can open elixir console by writing iex in terminal window and then we can do couple of stuff there
+
+Creating and running a elixir file :
+Instead , we can create a file eg  sample.exs and run it on terminal using command elixir sample.exs
+
+Console output in elixir :
+  IO.puts "hello world "
+  
+Mathematical functions :
+
+div 
+rem 
+round 
+trunc 
+
+to get the definition of any function we can try : h function_name 
+eg : h rem
+
+we can define a function by specifying its name and number of arguments it can take . eg rem/1 it means the function name is rem and number of arguments it can take is 1 .
