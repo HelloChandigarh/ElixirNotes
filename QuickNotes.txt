@@ -19,8 +19,26 @@ div
 rem 
 round 
 trunc 
+String.upcase
+byte_size(input)
+String.length(input)
+is_function(add/2) -> to check add is a . fucntion that takes 2 arguments .
 
 to get the definition of any function we can try : h function_name 
 eg : h rem
 
 we can define a function by specifying its name and number of arguments it can take . eg rem/1 it means the function name is rem and number of arguments it can take is 1 .
+
+Elixir provide anonymous function which can pass executible code as we are pasing strings,integers .They are delimited by keywords fn and end.
+iex> add = fn a, b -> a + b end
+#Function<12.71889879/2 in :erl_eval.expr/5>
+iex> add.(1, 2)
+3
+iex> is_function(add)
+true
+Parenthesised arguments after the anonymous function indicate that we want the function to be evaluated, not just its definition returned. Note that a dot (.) between the variable and parentheses is required to invoke an anonymous function. The dot ensures there is no ambiguity between calling the anonymous function matched to a variable add and a named function add/2.
+
+
+
+
+
