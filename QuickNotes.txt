@@ -38,7 +38,44 @@ iex> is_function(add)
 true
 Parenthesised arguments after the anonymous function indicate that we want the function to be evaluated, not just its definition returned. Note that a dot (.) between the variable and parentheses is required to invoke an anonymous function. The dot ensures there is no ambiguity between calling the anonymous function matched to a variable add and a named function add/2.
 
+List :
+define : [1,2,3,4]
+length [1,2,3,4]
+add : [1,2,3,4]++[8,9,true,false]
+elixir data is immutable only we can transform the data hence adding or deleting list creates a new list and not transforms the original list .
+head is the first element of teh list and tail is teh remaining elements of the list .
+eg ;
+hd(list)
+tl(list)
 
 
+Get information about any thing by using i command 
+eg : i [1,2,3,4]
+
+tuple store contigously hence retrieval operation is fast in touples .
+functions :
+tuple_size(input)
+elem(tuple,index)
+put_elem(tuple,index,value)
+
+
+List in elixir is like linked list hence :
+# This is fast as we only need to traverse `[0]` to prepend to `list`
+iex> [0] ++ list
+[0, 1, 2, 3]
+
+# This is slow as we need to traverse `list` to append 4
+iex> list ++ [4]
+[1, 2, 3, 4]
+
+retrieving values in tuples is fast whereas updating is little expensive task as it has to create a new tuple and all linkage once again .
+
+Tuples, on the other hand, are stored contiguously in memory. This means getting the tuple size or accessing an element by index is fast. However, updating or adding elements to tuples is expensive because it requires creating a new tuple in memory:
+
+iex> tuple = {:a, :b, :c, :d}
+iex> put_elem(tuple, 2, :e)
+{:a, :b, :e, :d}
+Note that this applies only to the tuple itself, not its contents. For instance, when you update a tuple, all entries are shared between the old and the new tuple, except for the entry that has been replaced. In other words, tuples and lists in Elixir are capable of sharing their contents. This reduces the amount of memory allocation the language needs to perform and is only possible thanks to the immutable semantics of the language.
+(it means it will create touple but same elements ko purane touple se hi refer krega ) that means value among two touples will be shared .
 
 
